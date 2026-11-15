@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-scale: 1rem;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  color: #0f172a;
+  background-color: #f8fafc;
+}
+
+/* High Contrast Mode Overrides */
+.high-contrast {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}
+
+.high-contrast * {
+  border-color: #ffff00 !important;
+}
+
+.high-contrast a,
+.high-contrast button {
+  color: #ffff00 !important;
+  border: 2px solid #ffff00 !important;
+}
+
+.high-contrast button:focus,
+.high-contrast a:focus {
+  outline: 4px solid #ffffff !important;
+}
+
+/* Colorblind Vision Presets */
+.vision-protanopia {
+  filter: url('#protanopia-filter');
+}
+
+.vision-deuteranopia {
+  filter: url('#deuteranopia-filter');
+}
+
+.vision-tritanopia {
+  filter: url('#tritanopia-filter');
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
